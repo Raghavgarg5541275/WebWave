@@ -8,52 +8,50 @@ const LoginSignup = () => {
 
   const changeHandler = (e) => {
     setFormData({...formData,[e.target.name]:e.target.value});
-    }
+  }
 
   const login = async () => {
-    let dataObj;
-    await fetch('http://localhost:4000/login', {
-      method: 'POST',
-      headers: {
-        Accept:'application/form-data',
-        'Content-Type':'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((resp) => resp.json())
-      .then((data) => {dataObj=data});
-      console.log(dataObj);
-      if (dataObj.success) {
-        localStorage.setItem('auth-token',dataObj.token);
+    try {
+      const response = await fetch('http://localhost:4000/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type':'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      if (data.success) {
+        localStorage.setItem('auth-token',data.token);
         window.location.replace("/");
+      } else {
+        alert(data.errors);
       }
-      else
-      {
-        alert(dataObj.errors)
-      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again later.');
+    }
   }
 
   const signup = async () => {
-    let dataObj;
-    await fetch('http://localhost:4000/signup', {
-      method: 'POST',
-      headers: {
-        Accept:'application/form-data',
-        'Content-Type':'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((resp) => resp.json())
-      .then((data) => {dataObj=data});
-
-      if (dataObj.success) {
-        localStorage.setItem('auth-token',dataObj.token);
+    try {
+      const response = await fetch('http://localhost:4000/signup', {
+        method: 'POST',
+        headers: {
+          'Content-Type':'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+      const data = await response.json();
+      if (data.success) {
+        localStorage.setItem('auth-token',data.token);
         window.location.replace("/");
+      } else {
+        alert(data.errors);
       }
-      else
-      {
-        alert(dataObj.errors)
-      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('An error occurred. Please try again later.');
+    }
   }
 
   return (
@@ -66,7 +64,7 @@ const LoginSignup = () => {
           <input type="password" placeholder="Password" name="password" value={formData.password} onChange={changeHandler}/>
         </div>
 
-        <button onClick={()=>{state==="Login"?login():signup()}}>Continue</button>
+        <button className="btn" onClick={()=>{state==="Login"?login():signup()}}>Continue</button>
 
         {state==="Login"?
         <p className="loginsignup-login">Create an account? <span onClick={()=>{setState("Sign Up")}}>Click here</span></p>
@@ -74,7 +72,7 @@ const LoginSignup = () => {
 
         <div className="loginsignup-agree">
           <input type="checkbox" name="" id="" />
-          <p>By continuing, i agree to the terms of use & privacy policy.</p>
+          <p>By continuing, I agree to the terms of use & privacy policy.</p>
         </div>
       </div>
     </div>
