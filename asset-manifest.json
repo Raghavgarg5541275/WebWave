@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/WebWave/static/css/main.0f67fa6d.css",
+    "main.js": "/WebWave/static/js/main.5c2b4d2f.js",
+    "static/media/banner_Logo.png": "/WebWave/static/media/banner_Logo.834744a799ac57a0aa84.png",
+    "static/media/banner_Domain.png": "/WebWave/static/media/banner_Domain.aaa9804cb39aa9b579c7.png",
+    "static/media/banner_websites.png": "/WebWave/static/media/banner_websites.c8c61c0279cf095cb1c6.png",
+    "static/media/hero_image.png": "/WebWave/static/media/hero_image.81bf0e69a49f1d809949.png",
+    "static/media/hand_icon.png": "/WebWave/static/media/hand_icon.9c7487cecb600f30901b.png",
+    "static/media/exclusive_image.png": "/WebWave/static/media/exclusive_image.c0069280e09d85cfaac2.png",
+    "static/media/logo.png": "/WebWave/static/media/logo.e69e5848bd7ce0fcfe46.png",
+    "static/media/logo_big.png": "/WebWave/static/media/logo_big.e69e5848bd7ce0fcfe46.png",
+    "index.html": "/WebWave/index.html",
+    "main.0f67fa6d.css.map": "/WebWave/static/css/main.0f67fa6d.css.map",
+    "main.5c2b4d2f.js.map": "/WebWave/static/js/main.5c2b4d2f.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0f67fa6d.css",
+    "static/js/main.5c2b4d2f.js"
+  ]
+}
