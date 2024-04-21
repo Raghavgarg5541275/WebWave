@@ -1,12 +1,9 @@
-// AboutUsContact.js
-
 import React from 'react';
 import '../Pages/CSS/AboutUsContact.css';
 
 const AboutUsContact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Add your form submission logic here
     alert('Form submitted!');
   };
 
